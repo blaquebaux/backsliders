@@ -40,13 +40,35 @@ python research/backsliders_2_no_path.py             # can price find "no path"?
   and *hard to access*: it needs **fundamental** "no path" signals (dilution, cash burn,
   going-concern) plus borrow tolerance and delisting mechanics — not a price pattern.
 
-**Verdict:** rejected as a systematic price short. Backsliders is the negative image of the
-drawdown-bounce keeper — shorting the fallen is shorting into the rally. A genuine
-terminal-decline short exists in principle (the zeros), but it is a fundamental, specialist
-short obscured by survivorship, not a price sleeve. Echoes Brute-Force (can't short with price
-alone) and Bottom (survivorship / untradability).
+## Would going LONG be the better bet? (#3)
+
+The natural follow-up: if shorting the fallen fails, is going *long* the better bet?
+Directionally **yes** (long most-fallen +0.25 vs short −0.28), but it is a weak, decaying
+standalone bet — and there is a trap:
+
+| long variant (fallen, beta-neutral, net) | Sharpe | halves |
+|---|---|---|
+| long fallen (< −25% threshold) | −0.06 | +0.39 / −0.59 (decays) |
+| long fallen & **still-falling** (< 50d MA) | **+0.11** | +0.56 / −0.51 (best, still decays) |
+| long fallen & **stabilizing** (> 50d MA) | **−0.83** | the trap — buying the fade |
+| long deeply-fallen (< −40%) | −0.02 | — |
+
+- **Buy the deepest oversold, never the already-stabilized.** Longing fallen names that have
+  climbed back above their 50-day MA is −0.83 — you buy *after* the bounce and catch the fade.
+- **It decays** (positive first half, negative second) — the bounce has weakened.
+- **It's not a new edge.** "Long the fallen" *is* the drawdown-bounce the family already keeps
+  (Bore / Blunt #5), and that version is cleaner (Ulcer-ranked, beta-neutral, ~+0.46) than any
+  threshold cut here.
+
+**Verdict:** rejected as a systematic price *short* — Backsliders is the negative image of the
+drawdown-bounce keeper, and shorting the fallen is shorting into the rally. Flipped **long**, it
+is the better side but only re-derives (more weakly) the existing bounce keeper, with a clear
+"don't buy the stabilizers" trap. A genuine terminal-decline short exists in principle (the
+zeros), but it is a fundamental, specialist short obscured by survivorship, not a price sleeve.
+Echoes Brute-Force (can't short with price alone) and Bottom (survivorship / untradability).
 
 ## Files
 - `_backsliders_common.py` — shared helpers + the survivor universe.
 - `backsliders_1_short_the_fallen.py` — long vs short the fallen, by horizon.
 - `backsliders_2_no_path.py` — the trend-split ("still falling") + survivorship honesty.
+- `backsliders_3_long_side.py` — would going long be the better bet? (the long-side variants).
