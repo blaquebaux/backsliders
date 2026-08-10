@@ -26,8 +26,27 @@ A SHORT sleeve, and an honest counter-test. The base found high-drawdown names t
 
 Nothing above is implemented or validated. This is the map, not the territory.
 
+## Research — first pass done
+
+Full detail in [`research/README.md`](research/README.md). The scorecard:
+
+| # | Question | Verdict |
+|---|----------|---------|
+| 1 | Does shorting the fallen pay? | ❌ no — short −0.28 (long +0.25); negative at every horizon |
+| 2 | Can price isolate "no path"? | ❌ no — shorting "still-falling" is worse (−0.17); they bounce harder |
+
+**The synthesis:** Backsliders is the negative image of the drawdown-bounce keeper. Fallen names
+*bounce* more often than they keep sinking (in tradable space), so shorting them is shorting into
+the rally — it loses at every horizon (−0.28), and a price "still-falling" filter is *worse*
+(−0.17). Survivorship cuts *against* the short here (the opposite of Bottom): the ideal targets —
+names that go to zero — delist and leave the sample, so this data both understates and can't
+access the real terminal-decline short. That short exists in principle but is a **fundamental**,
+specialist play (dilution / cash-burn / going-concern + borrow tolerance), not a price sleeve.
+
 ## Status
-**Scaffold.** Engine wired as a submodule; strategy research not yet conducted.
+**Research: first pass complete — null** (`research/`). The short side is the wrong side; the
+edge is the long drawdown-bounce (Bore / Blunt #5). No live driver. Nothing validated to the
+spine's bar.
 
 ## The Blaque Baux family
 This repo is one sleeve of the **Blaque Baux** family — a single governed engine steered in
@@ -37,7 +56,7 @@ base/blueprint and holds the [full family roster](https://github.com/Carter-Warr
 ## Layout
 ```
 engine/     the Blaque Baux platform (git submodule -> Carter-Warrens/blaquebaux)
-research/   Path-A strategy sketches (to come)
+research/   two Path-A sketches (short the fallen, the no-path test) + scorecard
 live/       governed live drivers (once a sleeve graduates to paper A/B)
 ```
 
