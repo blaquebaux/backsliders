@@ -72,5 +72,13 @@ research/   two Path-A sketches (short the fallen, the no-path test) + scorecard
 live/       governed live drivers (once a sleeve graduates to paper A/B)
 ```
 
+## Planned v2 leg — dead-cat long-only (inversion C)
+
+`backsliders_2`: strip the short leg entirely and go **long-only the maximum 1-month losers, filtered to the bottom
+quartile of short interest** — isolating the oversold-bounce / "lottery ticket" premium while explicitly neutralizing the
+short-squeeze risk that blows up long/short distressed books. backsliders already finds the long bounce is the edge; this
+leg asks whether that bounce survives once the squeeze-prone (heavily-shorted) names are removed. Needs short-interest
+data (not in Alpaca). (Folded from the batch-3 inversion set.)
+
 ## License
 [MIT](LICENSE). (c) 2026 Carter Warrens.
